@@ -91,6 +91,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8974/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
 
+ifneq ($(TARGET_DEVICE),onyx)
+
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc-nci \
@@ -108,7 +110,7 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
         frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
 	frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
-
+endif # bacon
 
 #PRODUCT_BOOT_JARS += org.codeaurora.Performance \
                      vcard \
